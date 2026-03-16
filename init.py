@@ -34,9 +34,14 @@ db_mariadb = "mariadb+mariadbconnector://univesp:univesp@127.0.0.1:3306/pi2025_1
 db_atual = db_sql_lite
 
 # app = Flask(__name__)
+# app = Flask(__name__, static_folder='static')
 nomeApp = "Appy"
 # global app
-app = Flask(nomeApp)
+# app = Flask(nomeApp)
+app = Flask(nomeApp,
+            static_url_path='',
+            static_folder='frontend/dist'
+            )
 app.config["DEBUG"] = True
 app.config["SQLALCHEMY_DATABASE_URI"] = db_atual
 # global db

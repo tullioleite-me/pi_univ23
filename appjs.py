@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, abort, redirect, render_template, request, jsonify, Response, url_for
+from flask import Flask, abort, redirect, render_template, request, jsonify, Response, send_from_directory, url_for
 import sys
 import os
 from interfaces import clientes_sql, clientes_sqla
@@ -18,7 +18,9 @@ tClientes = clientes_sqla()
 
 login_usuario = "user"
 login_senha = "pass"
-logado = False
+# logado = False
+# debug
+logado = True
 
 
 # ---------paginas ativas--------------------------
@@ -27,7 +29,8 @@ logado = False
 def home():
     comentarios = pegar_comentarios_tur()
     # if request.method == 'GET':
-    return render_template('indexjs.html', comentarios=comentarios)
+    # return render_template('indexjs.html', comentarios=comentarios)
+    return send_from_directory('frontend/dist/', 'index.html')
     # elif request.method == 'POST':
     #     novo = request.form
     #     if not novo.get("nome") or not novo.get("email") or not novo.get("solicit"):
@@ -52,10 +55,12 @@ def home():
 # adicionado para testes sem login
 
 
+# @app.route('/clientes.html', methods=['GET'])
 @app.route('/clientes', methods=['GET'])
 def clientesget():
     if logado == True:
-        return render_template('clientes.html')
+        # return render_template('clientes.html')
+        return send_from_directory('frontend/dist/', 'clientes.html')
     else:
         abort(401)
         # return jsonify({'msg': 'Acesso não autorizado!'}), 401

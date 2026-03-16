@@ -1,0 +1,19 @@
+/* override primary color */
+.button.is-primary {
+	background-color: #8c67ef;
+	border-color: #8c67ef;
+}
+
+.button.is-primary:hover {
+	background-color: #7452d4;
+}
+
+/* navbar color */
+.navbar.is-primary {
+	background-color: #8c67ef;
+}
+
+/* Buefy components */
+.b-button.is-primary {
+	background-color: #8c67ef;
+}

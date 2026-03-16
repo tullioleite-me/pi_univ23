@@ -1,0 +1,37 @@
+// Modern Sass with @use directive (Dart Sass 1.23.0+)
+@use "bulma/sass" with ( // Set your custom colors
+	$primary: #8c67ef,
+	$link: #8c67ef,
+	$info: #3e8ed0,
+	$success: #48c78e,
+	$warning: #ffe08a,
+	$danger: #f14668,
+
+	// Custom typography
+	$family-sans-serif: ("Nunito", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif),
+
+	// Custom spacing and sizing
+	$size-1: 3rem,
+	$size-2: 2.5rem,
+	$size-3: 2rem,
+	$size-4: 1.5rem,
+	$size-5: 1.25rem,
+	$size-6: 1rem,
+	$size-7: 0.75rem,
+
+	// Border radius
+	$radius-small: 2px,
+	$radius: 4px,
+	$radius-large: 6px,
+	$radius-rounded: 9999px,
+
+	// Buefy specific variables
+	// $speed-slow: 150ms,
+	// $speed-slower: 250ms
+
+
+);
+
+// Import Buefy styles
+@use "buefy/src/scss/buefy";
+@use "bulma/bulma";

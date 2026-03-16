@@ -15,12 +15,35 @@ pylance
 pydebugger
 vscode-icons
 
+#extensões para vuejs
+javascript and typescript nightly(MS)
+npm intelisense
+vue(official)
+vitest
+es6-string-html
+
 #para login
 usuário: user
 senha: pass
 
 
-##como rodar
+#rodando projeto vuejs
+1. instalar arquivos
+navegue até a pasta frontend pelo terminal, e digite:
+npm install
+
+2. rodar em modo dev
+na mesma pasta digite:
+npm run dev
+
+3. se for compilar
+npm run build
+Após isso o projeto pode ser servido pelo flask normalmente.
+
+*O ideal no desenvolvimento é rodar o vue em modo dev, rodar o python e consumir a api do servidor. Sem fazer build o tempo todo.
+
+
+##como rodar projeto python
 
 1.criar .venv local
 ctrl+shit+p   - accessar os comandos do vscode
